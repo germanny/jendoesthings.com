@@ -1,0 +1,49 @@
+# Site settings
+title:              Jen Does Things
+email:              germanny@gmail.com
+description:        >- # this means to ignore newlines until "baseurl:"
+  Today, I'm learning about Jekyll
+url:                '' # the base hostname & protocol for your site, e.g. http://example.com
+layouts_dir:        _html/_layouts
+includes_dir:       _html/_includes
+
+# Build settings
+markdown:           kramdown
+
+# Image settings
+image_base:         /assets/images/
+
+# Collections
+collections_dir:    _collections
+
+collections:
+  pages:
+    output:          true;
+    permalink:       :path
+
+# Defaults
+defaults:
+  - scope:
+      path:          ""
+    values:
+      layout:        "default"
+
+# Exclude Output Directory
+exclude:            [README.md, Gemfile, Gemfile.lock]
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-cloudinary
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
