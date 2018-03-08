@@ -9,13 +9,23 @@
   <title>{{ page.title }}</title>
   <meta name="description" content="{{ page.description }}"/>
 
-  <link href="{{ site.baseurl }}/assets/css/styles.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="https://www.jengermann.com/favicon.ico">
+  <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet" type="text/css" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-</head>
-<body>
+  <!-- Typkit Code -->
+  <script src="https://use.typekit.net/tqt8dfj.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-  <main role="main" class="container">
+  <link rel='dns-prefetch' href='//s.w.org' />
+
+</head>
+
+<body class="home" id="page-home">
+
+  <a name="top" id="top"></a>
+
+  <main role="main" class="container" id="page">
 
     {% include header.html %}
 
@@ -25,12 +35,103 @@
 
     </div>
 
-  </main>
+    {% include footer.html %}
 
-  {% include footer.html %}
+  </main>
 
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script type='text/javascript' src='{{ site.baseurl }}/assets/js/scripts.js'></script>
+
+  <script type='text/javascript' src='http://www.jengermann.com/wp-content/themes/v8/assets/scripts/scripts.js'></script>
+  <script type='text/javascript' src='http://www.jengermann.com/wp-content/themes/v8/assets/scripts/modernizr.custom.13146.js'></script>
+  <script type='text/javascript' src='http://www.jengermann.com/wp-content/themes/v8/assets/scripts/jquery.easing.1.3.js'></script>
+  <script type='text/javascript' src='http://www.jengermann.com/wp-includes/js/wp-embed.min.js'></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $("body").animate({ opacity: 1}, 500);
+    });
+
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-6997373-2");
+    pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+
+  </body>
+  </html>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      var $header       = $("header#branding"); // what we want to show/hide
+      var headerHeight    = $header.height() + 10; // plus 10 for that border
+      var scrollDir       = "down"; // we'll switch our scroll direction to show/hide header
+      var $firstMod       = $('#work'); // where this first module is depends on if we want our header to show or hide
+      var $letsGo       = $('a#lets-go img');
+      var $module       = $('section.module'); //these are the main sections we want to do something with
+
+      $(window).bind('scroll', function(e) {
+        var windowTop     = $(window).scrollTop();
+        if ( windowTop > $firstMod.offset().top-headerHeight*2 && scrollDir == 'down' ) {
+          scrollDir = 'up';
+          $header.stop().animate({top: 0}, 300);
+        } if ( windowTop < $firstMod.offset().top-headerHeight*2 && scrollDir == 'up' ) {
+          scrollDir = 'down';
+          $header.stop().animate({top: - + headerHeight}, 300);
+        }
+      });
+
+      // fade in the Go to Work arrows
+      setTimeout( function(){
+        $($letsGo).css('opacity', .8);
+      }, 1500);
+
+          // http://stackoverflow.com/questions/9652944/jquery-page-scroll-to-different-page
+      var jump=function(e) {
+        if (e) {
+          e.preventDefault();
+          var target = $(this).attr("href");
+        } else {
+          var target = location.hash;
+        }
+
+        $('html,body').animate({
+          scrollTop: $(target).offset().top - headerHeight
+        }, 1000,'easeOutQuad');
+      }
+
+      $('html, body').hide()
+      $('#menu ul a, #logo a, .btn').bind("click", jump);
+
+      if (location.hash){
+        setTimeout(function(){
+          $('html, body').scrollTop(0).show()
+            jump()
+          }, 0);
+      } else {
+        $('html, body').show()
+      }
+
+      $(window).scroll(function(e) {
+        e.preventDefault();
+
+        var windowTop     = $(window).scrollTop()
+        $module.each(function () {
+          var eTop      = $(this).offset().top; //get the offset top of the element
+          var modHeight     = $(this).height();
+
+          if ( ( eTop - windowTop ) < 140 ) {
+            var modID = $(this).attr('id');
+            $(this).addClass('active').siblings().removeClass('active');
+            $( '#menu ul li.' + modID ).addClass('current').siblings().removeClass('current');
+                    $('body').removeClass().addClass(modID);
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>

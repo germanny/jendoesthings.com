@@ -1,0 +1,220 @@
+@include breakpoint(desktop-xl)
+  $desktopxl_width: 970px
+  $width: $desktopxl_width
+
+  body
+    background-size: 1280px
+
+    &:after
+      content: "desktop-xl"
+
+  h1
+    @include pxtoem(font-size, 25px, $base-font-size)
+    @include pxtoem(line-height, 45px, 40px)
+    @include pxtoem(margin-bottom, 25px, 40px)
+
+  h2
+    @include pxtoem(font-size, 25px, $base-font-size)
+    @include pxtoem(line-height, 45px, 40px)
+    @include pxtoem(margin-bottom, 25px, 40px)
+
+  #content
+    @include fluid(width, $width, $width)
+    max-width: 1280px
+
+  h1.page-title
+    @include fluid(padding-top, 58px, $width)
+    @include fluid(margin-bottom, 16px, $width)
+
+  h2
+    @include fluid(margin-bottom, 194px, $width)
+
+  img#brandmark
+    @include fluid(width, 163px, $width)
+    @include fluid(margin-bottom, 28px, $width)
+
+  ul#social-profiles
+    @include fluid(margin-bottom, 38.5px, $width)
+
+
+@include breakpoint(desktop)
+  $desktop_width: 970px
+  $width: $desktop_width
+
+  body
+    &:after
+      content: "desktop"
+
+  h1
+    @include pxtoem(font-size, 25px, $base-font-size)
+    @include pxtoem(line-height, 45px, 40px)
+    @include pxtoem(margin-bottom, 25px, 40px)
+
+  h2
+    @include pxtoem(font-size, 25px, $base-font-size)
+    @include pxtoem(line-height, 45px, 40px)
+    @include pxtoem(margin-bottom, 25px, 40px)
+
+  #content
+    @include fluid(width, $width, $width)
+    max-width: 1280px
+
+  h1.page-title
+    @include fluid(padding-top, 58px, $width)
+    @include fluid(margin-bottom, 17px, $width)
+
+  h2
+    @include fluid(margin-bottom, 137px, $width)
+
+  img#brandmark
+    @include fluid(width, 167px, $width)
+    @include fluid(margin-bottom, 28px, $width)
+
+  ul#social-profiles
+    @include fluid(margin-bottom, 29.5px, $width)
+
+
+@include breakpoint(mobile-lg)
+  $mobile_lg_width: 720px
+  $width: $mobile_lg_width
+
+  html
+    background-size: 125%
+
+  body
+    background-size: 105%
+
+    &:after
+      content: "mobile-lg"
+
+  h1
+    @include pxtoem(font-size, 20px, $base-font-size)
+    @include pxtoem(line-height, 40px, 40px)
+    @include pxtoem(margin-bottom, 20px, 40px)
+
+  h2
+    @include pxtoem(font-size, 20px, $base-font-size)
+    @include pxtoem(line-height, 40px, 40px)
+    @include pxtoem(margin-bottom, 20px, 40px)
+
+  #content
+    @include fluid(width, $width, $width)
+
+  h1.page-title
+    @include fluid(padding-top, 45.5px, $width)
+    @include fluid(margin-bottom, 11px, $width)
+
+  h2
+    @include fluid(margin-bottom, 146px, $width)
+
+  img#brandmark
+    @include fluid(width, 124px, $width)
+    @include fluid(margin-bottom, 18px, $width)
+
+  ul#social-profiles
+    @include fluid(margin-bottom, 34px, $width)
+
+    li
+      a
+        @include size(33px 33px)
+        background-size: 473.647059168px
+
+      &.tumblr
+        a
+          background-position: 0 0
+
+      &.twitter
+        a
+          background-position: -49px 0
+
+      &.dribbble
+        a
+          background-position: -99px 0
+
+      &.flickr
+        a
+          background-position: -146px 0
+
+      &.youtube
+        a
+          background-position: -196px 0
+
+      &.linkedin
+        a
+          background-position: -246px 0
+
+      &.github
+        a
+          background-position: -294px 0
+
+      &.facebook
+        a
+          background-position: -342px 0
+
+      &.pinterest
+        a
+          background-position: -392px 0
+
+      &.email
+        a
+          background-position: -440px 0
+
+
+
+@include breakpoint(mobile-sm)
+  $mobile_sm_width: 470px
+  $width: $mobile_sm_width
+
+  html
+    background-size: 200%
+
+  body
+    background-size: 200%
+
+    &:after
+      content: "mobile-sm"
+
+  h1
+    @include pxtoem(font-size, 20px, $base-font-size)
+    @include pxtoem(line-height, 40px, 40px)
+    @include pxtoem(margin-bottom, 20px, 40px)
+
+  h2
+    @include pxtoem(font-size, 25px, $base-font-size)
+    @include pxtoem(line-height, 45px, 40px)
+    @include pxtoem(margin-bottom, 25px, 40px)
+
+  #content
+    @include fluid(width, $width, $width)
+
+  h1.page-title
+    @include fluid(padding-top, 60px, $width)
+    @include fluid(margin-bottom, 11px, $width)
+
+  h2
+    @include fluid(margin-bottom, 41px, $width)
+
+  img#brandmark
+    @include fluid(width, 162px, $width)
+    @include fluid(margin-bottom, 23px, $width)
+
+  ul#social-profiles
+    @include fluid(width, 259px, $width)
+    margin: 0 auto
+    @include fluid(margin-bottom, 46.5px, $width)
+
+    li
+      a
+        @include pxtoem(margin-right, 4px, $base-font-size)
+        @include pxtoem(margin-bottom, 11px, $base-font-size)
+        @include pxtoem(margin-left, 4px, $base-font-size)
+      &:nth-child(5)
+        a
+          margin-right: 0
+      &:nth-child(6)
+        a
+          margin-left: 0
+
+  footer#siteinfo
+    @include pxtoem(font-size, 12px, $base-font-size)
+    @include pxtoem(line-height, 15px, $base-line-height)

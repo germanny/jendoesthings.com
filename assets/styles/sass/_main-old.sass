@@ -1,0 +1,878 @@
+html
+  background: gray
+  color: $black
+  font-size: 62.5%
+  font-weight: 400
+  text-align: center
+
+  @include breakpoint(browser-lg)
+    background-size: 125%
+
+  @include breakpoint(browser-sm)
+    background-size: 200%
+
+
+body
+  height: 100%
+  @include pxtoem(font-size, $base-font-size, $base-font-size)
+  @include pxtoem(line-height, $base-line-height, $base-line-height)
+
+  background-size: 102.34375%
+
+  font-family: $main-font
+  font-size: $base-font-size
+  line-height: $base-line-height
+  text-align: center
+
+  &:after //This adds a label in the top-left corner that displays the current media query state.
+    background: red
+    color: $white
+    content: "undefined"
+    left: 0
+    padding: .2em 1em
+    position: absolute
+    text-align: center
+    top: 0
+    z-index: 99
+    font-size: 11px
+
+  @include breakpoint(browser-lg)
+    &:after
+      content: "browser-lg"
+
+  @include breakpoint(browser-sm)
+    &:after
+      content: "browser-sm"
+
+#page
+  position: relative
+  z-index: 10
+
+  body#page-home &
+    width: 100%
+    height: 100%
+
+header#branding
+  width: 100%
+  height: 100px
+  position: fixed
+  top: -100px
+  z-index: 99
+  background-color: $black
+
+  @include breakpoint(browser-sm)
+    box-shadow: 0 1px 1px $white
+
+  body.single-projects &
+    margin-bottom: 50px
+    position: relative
+    top: 0
+
+  nav#menu
+
+    ul
+      width: 100%
+      margin: 0 auto
+      list-style: none
+
+      @include breakpoint(browser-lg)
+        max-width: $width
+        @include pxtoem(font-size, 20px, $base-font-size)
+
+      @include breakpoint(browser-sm)
+        max-width: $width
+        text-align: center
+        @include pxtoem(font-size, 14px, $base-font-size)
+
+      li
+        float: right
+
+        @include breakpoint(browser-sm)
+          float: none
+          display: inline-block
+
+        &#logo
+          float: left
+
+          @include breakpoint(browser-lg)
+            margin-top: 20px
+
+          @include breakpoint(browser-sm)
+            width: 100%
+            clear: both
+            float: none
+
+        &.contact
+          @include breakpoint(browser-sm)
+            clear: left
+
+        a
+          padding: 0 10px
+          display: block
+          color: $gray-tint9
+
+          @include breakpoint(browser-lg)
+            padding: 39px 10px
+
+          @include breakpoint(browser-sm)
+            color: $black
+
+          &:hover
+            color: $gray-tint45
+
+#logo
+  a
+    width: 175px
+    height: 57px
+    padding: 0 !important
+    display: block
+    background: url('assets/images/logos/logo.png') no-repeat 0 0
+    background-size: 175px
+    text-indent: -9999px
+
+    @include breakpoint(browser-sm)
+      width: 125px
+      height: 40.71428575px
+      margin: 10px auto 15px
+      background-size: 100%
+
+a
+  color: $linkColor
+  text-decoration: none
+  @include transition (all 0.15s ease-in-out)
+
+  &:hover
+    color: $linkColorHover
+
+  &:focus, &:active
+    text-decoration: underline
+
+body
+  &.work, &.single-projects
+    header#branding
+      border-bottom: 1px solid $primary-color
+
+      nav#menu ul li.current a
+        color: $primary-color
+    #logo
+      a
+        background-color: $primary-color
+    a:hover
+      color: $gray-tint9
+
+  &.about
+    header#branding
+      border-bottom: 1px solid $secondary-color
+      nav#menu ul li.current a
+        color: $secondary-color
+    #logo
+      a
+        background-color: $secondary-color
+    @include breakpoint(browser-sm)
+      header#branding
+        background-color: #eaecee
+        border-bottom: 1px solid $gray-tint27
+
+  &.stuff-n-things
+    header#branding
+      border-bottom: 1px solid $secondary-color
+      nav#menu ul li.current a
+        color: $secondary-color
+    #logo
+      a
+        background-color: $secondary-color
+
+  &.contact
+    header#branding
+      border-bottom: 1px solid $gray-tint45
+      nav#menu ul li.current a
+        color: $gray-tint45
+    #logo
+      a
+        background-color: $gray-tint45
+
+h1, h2, h3, h4
+  margin-top: 0
+
+h1
+  font-weight: 500
+  @include transition (all 0.3s ease-in-out)
+
+  &.page-title
+  width: 100%
+  display: block
+
+h3
+  font-weight: 500
+
+header.section-header, header.entry-header
+  h2.section-title, h1.entry-title
+    font-family: $serif
+    @include pxtoem(font-size, 60px, $base-font-size)
+    @include pxtoem(line-height, 55px, 60px)
+
+    @include breakpoint(browser-sm)
+      @include pxtoem(font-size, 50px, $base-font-size)
+      @include pxtoem(line-height, 45px, 60px)
+
+p
+  @include pxtoem(margin-bottom, 25px, $base-font-size)
+  margin-top: 0
+
+footer#siteinfo
+  height: 100px
+  @include box-sizing(border-box)
+  padding-top: 30px
+  clear: both
+  background-color: black
+  @include pxtoem(font-size, 15px, $base-font-size)
+  @include pxtoem(line-height, 20px, $base-line-height)
+
+  .copy
+    margin-bottom: 15px
+    color: $gray-tint45
+
+  .quote
+    color: $gray-tint45
+    font-style: italic
+
+ul.social-profiles
+  width: 100%
+  list-style: none
+  text-align: center
+
+  @include breakpoint(browser-sm)
+    width: 100%
+    @include pxtoem(max-width, 300px, $base-font-size)
+    margin: 0 auto
+
+  li
+    display: inline-block
+
+    a
+      @include size(51px 51px)
+      display: inline-block
+      @include pxtoem(margin-left, 9.55px, $base-font-size)
+      @include pxtoem(margin-right, 9.55px, $base-font-size)
+      text-indent: -9999px
+
+      background-repeat: no-repeat
+      background-size: 627.5px
+
+      filter: alpha(opacity=80)
+      opacity: 0.8 /* For IE8 and earlier */
+
+      @include transition (opacity 0.3s ease-in-out)
+
+      &:hover
+        filter: alpha(opacity=100)
+        opacity: 1 /* For IE8 and earlier */
+
+      @include breakpoint(browser-sm)
+        @include size(34px 34px)
+        background-size: 405px
+        @include pxtoem(margin, 5px, $base-font-size)
+
+    &.jengermanndotcom
+      a
+        background-position: 0 0
+
+        @include breakpoint(browser-sm)
+          background-position: 0 0
+
+    &.twitter
+      a
+        background-position: -52px 0
+        @include breakpoint(browser-sm)
+          background-position: -33px 0
+
+    &.instagram
+      a
+        background-position: -105px 0
+        @include breakpoint(browser-sm)
+          background-position: -67px 0
+
+    &.github
+      a
+        background-position: -157px 0
+        @include breakpoint(browser-sm)
+          background-position: -100px 0
+
+    &.tumblr
+      a
+        background-position: -210px 0
+        @include breakpoint(browser-sm)
+          background-position: -135px 0
+
+    &.dribbble
+      a
+        background-position: -262px 0
+        @include breakpoint(browser-sm)
+          background-position: -168px 0
+
+    &.linkedin
+      a
+        background-position: -315px 0
+        @include breakpoint(browser-sm)
+          background-position: -202px 0
+
+    &.flickr
+      a
+        background-position: -367px 0
+        @include breakpoint(browser-sm)
+          background-position: -237px 0
+
+    &.pinterest
+      a
+        background-position: -419px 0
+        @include breakpoint(browser-sm)
+          background-position: -261px 0
+
+    &.email
+      a
+        background-position: -473px 0
+        @include breakpoint(browser-sm)
+          background-position: -305px 0
+
+    &.youtube
+      a
+        background-position: -525px 0
+        @include breakpoint(browser-sm)
+          background-position: -338px 0
+
+    &.facebook
+      a
+        background-position: -577px 0
+        @include breakpoint(browser-sm)
+          background-position: -372px 0
+
+.module
+  height: 92%
+  @include pxtoem(padding-top, 82px, $base-font-size)
+  @include box-sizing(border-box)
+  border-bottom: 10px solid $gray-tint3
+
+  header, article
+    width: 100%
+    @include pxtoem(max-width, 730px, $base-font-size)
+    margin: 0 auto
+    position: relative
+    z-index: 10
+
+  article
+    text-align: left
+
+  @include breakpoint(browser-sm)
+    padding: 10px
+    @include pxtoem(padding-top, 43px, $base-font-size)
+
+  &#home
+    height: 100%
+    min-height: none
+    overflow: hidden
+    @include linear-gradient(#073f7a,#28b1d4)
+    position: relative
+    border-bottom: 0
+
+    @include breakpoint(browser-lg)
+      @include pxtoem(padding-top, 68px, $base-font-size)
+
+    @include breakpoint(browser-sm)
+      @include pxtoem(padding-top, 12px, $base-font-size)
+
+    &::before
+      content: ''
+      width: 100%
+      height: 100%
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 0
+      background: url('assets/images/backgrounds/golden-ratio-home.png') no-repeat center 0
+
+      @include breakpoint(browser-lg)
+        background-size: 730px
+
+      @include breakpoint(browser-sm)
+        background-size: 95%
+
+    color: $white
+
+    a
+      color: $white
+
+    header.page-header
+      position: relative
+      z-index: 99
+
+      h1,h2
+        @include pxtoem(margin-bottom, 10px, $base-font-size)
+        @include pxtoem(font-size, 25px, $base-font-size)
+        @include pxtoem(line-height, 70px, $base-line-height)
+        font-weight: 400
+
+        @include breakpoint(browser-sm)
+          @include pxtoem(margin-bottom, 4px, $base-font-size)
+          @include pxtoem(font-size, 17px, $base-font-size)
+          font-weight: 500
+
+      h2
+        @include breakpoint(browser-sm)
+          padding: 0 40px
+          @include pxtoem(line-height, 45px, $base-line-height)
+
+        span
+          @include breakpoint(browser-sm)
+            display: none
+
+      img#brandmark
+        height: auto
+        margin: 0 auto
+
+        @include breakpoint(browser-lg)
+          @include fluid(width, 220px, $width)
+          @include fluid(margin-bottom, 42px, $width)
+
+        @include breakpoint(browser-sm)
+          @include fluid(width, 102px, $width)
+          @include fluid(margin-bottom, 7.5px, $width)
+
+      a#lets-go
+        width: 130px
+        margin: 0 auto
+        display: block
+        opacity: 0
+
+        &:hover
+          filter: alpha(opacity=100) !important
+          opacity: 1 !important /* For IE8 and earlier */
+
+        @include breakpoint(browser-lg)
+          padding: 23px 0 58px
+
+        @include breakpoint(browser-sm)
+          width: 86px
+          padding: 16px 0 12px
+
+          img
+            height: 40px
+
+    ul.social-profiles
+      margin: 0 auto
+      position: relative
+      z-index: 99
+
+      @include breakpoint(browser-lg)
+        @include pxtoem(max-width, 750px, $base-font-size)
+
+      @include breakpoint(browser-sm)
+        height: 37px
+        overflow: hidden
+
+      li
+        a
+          background-image: url('assets/images/icons/icons-social.png')
+
+  &#work
+    background-color: #434f61
+    position: relative
+
+    @include breakpoint(browser-sm)
+      min-height: 1947px
+
+    &::before
+      content: ''
+      width: 100%
+      height: 100%
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 0
+      background: url('assets/images/backgrounds/golden-ratio-work.png') no-repeat center 0
+      background-size: 730px
+
+    #logo
+      a
+        background-color: $blue
+
+    header.section-header
+      @include pxtoem(padding-bottom, 45px, $base-font-size)
+      @include pxtoem(margin-bottom, 30px, $base-font-size)
+      position: relative
+      border-bottom: 1px solid $black
+
+      @include breakpoint(browser-sm)
+        @include pxtoem(padding-bottom, 29px, $base-font-size)
+        @include pxtoem(margin-bottom, 10px, $base-font-size)
+
+      &::after
+        content: ""
+        position: absolute
+        right: 0
+        bottom: -2px
+        left: 0
+        height: 1px
+        background-color: $gray-tint45
+
+      h2
+        color: $gray-tint3
+        text-shadow: 1px 1px 1px $black
+
+      h3
+        color: $gray-tint9
+        @include pxtoem(font-size, 21px, $base-font-size)
+        @include pxtoem(line-height, 33px, 21px)
+        font-weight: 400
+        text-shadow: 1px 1px 1px $black
+
+        @include breakpoint(browser-sm)
+          display: none
+
+    article
+      ul#projects
+        @include pxtoem(margin-top, 50px, $base-font-size)
+        list-style: none
+        font-weight: 500
+        text-align: center
+
+        @include breakpoint(browser-sm)
+          @include pxtoem(margin-top, 20px, $base-font-size)
+
+        li
+          width: 28.7671233%
+          max-width: 210px
+          @include pxtoem(height, 210px, $base-font-size)
+          @include pxtoem(margin-bottom, 50px, $base-font-size)
+          @include pxtoem(margin-left, 45px, $base-font-size)
+          display: inline-block
+
+          &:first-child, &:nth-child(4)
+            margin-left: 0
+
+          a
+            width: 100%
+            height: 100%
+            display: block
+            position: relative
+            background-color: $gray-tint9
+
+            h4
+              width: 100%
+              height: 50px
+              @include box-sizing(border-box)
+              @include pxtoem(padding-top, 12px, $base-font-size)
+              position: absolute
+              bottom: 0
+              background-color: $white
+              color: $textColor
+              font-family: $serif
+              @include pxtoem(font-size, 15px, $base-font-size)
+
+            span
+              display: block
+              padding-top: 5px
+              color: $textColor
+              font-family: $main-font
+              font-weight: 500
+              @include pxtoem(font-size, 11px, $base-font-size)
+
+          @include breakpoint(browser-sm)
+            width: 100%
+            display: block
+            margin-left: 0
+            @include pxtoem(margin-bottom, 20px, $base-font-size)
+
+  &#about
+    @include linear-gradient(#eaecee,#dde8ec)
+    position: relative
+
+    @include breakpoint(browser-sm)
+      min-height: 1283px
+
+    &::before
+      content: ''
+      width: 100%
+      height: 100%
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 0
+      background: url('assets/images/backgrounds/golden-ratio-about.png') no-repeat center 0
+      background-size: 730px
+
+    header.section-header
+      @include pxtoem(padding-bottom, 56px, $base-font-size)
+      @include pxtoem(margin-bottom, 30px, $base-font-size)
+      position: relative
+      border-bottom: 1px solid $gray-tint27
+
+      @include breakpoint(browser-sm)
+        @include pxtoem(margin-bottom, 32px, $base-font-size)
+        @include pxtoem(padding-bottom, 39px, $base-font-size)
+
+      &::after
+        content: ""
+        position: absolute
+        right: 0
+        bottom: -2px
+        left: 0
+        height: 1px
+        background-color: $white
+
+      h2
+        margin-bottom: 35px
+        color: $secondary-color
+        text-shadow: 1px 1px 1px $white
+
+        @include breakpoint(browser-sm)
+          margin-bottom: 29px
+
+      h3
+        color: $black
+        @include pxtoem(font-size, 30px, $base-font-size)
+        @include pxtoem(line-height, 33px, 30px)
+        text-shadow: 1px 1px 1px $white
+
+        @include breakpoint(browser-sm)
+          @include pxtoem(font-size, 25px, $base-font-size)
+          @include pxtoem(line-height, 30px, 25px)
+
+    article
+
+      ul
+        width: 100%
+        list-style: none
+
+        li
+          width: 46.5753425%
+          @include fluid(max-width, 340px, $width)
+          margin-bottom: 50px
+          margin-left: 45px
+          display: inline-block
+
+          &:first-child, &:nth-child(3)
+            margin-left: 0
+
+          &:nth-child(3)
+            width: 100%
+            max-width: none
+
+          @include breakpoint(browser-sm)
+            width: 100%
+            margin-left: 0
+            margin-bottom: 5px
+
+          h3
+            margin-bottom: 19px
+            color: $secondary-color
+            @include pxtoem(font-size, 25px, $base-font-size)
+            @include pxtoem(line-height, 24px, 25px)
+            text-shadow: 1px 1px 1px $white
+
+          p, ul
+            @include pxtoem(font-size, 15px, $base-font-size)
+            @include pxtoem(line-height, 24px, 15px)
+            text-shadow: 1px 1px 1px $white
+
+          ul
+
+            li
+              width: 100%
+              max-width: none
+              margin: 0 0 10px
+              padding-left: 9px
+              display: block
+              position: relative
+
+              &::before
+                content: "\2022  "
+                position: absolute
+                left: -1px
+                top: -1px
+                color: $secondary-color
+                font-size: 15px
+
+
+  &#stuff-n-things
+    position: relative
+    @include linear-gradient(#073f7a,#28b1d4)
+
+    &::before
+      content: ''
+      width: 100%
+      height: 100%
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 0
+      background: url('assets/images/backgrounds/golden-ratio-home.png') no-repeat center 0
+      background-size: 730px
+
+    header.section-header
+      h2
+        @include breakpoint(browser-sm)
+          @include pxtoem(font-size, 35px, $base-font-size)
+
+      h3
+        @include pxtoem(font-size, 22px, $base-font-size)
+
+  &#contact
+    @include linear-gradient(#c3dce6,#eaecee)
+    position: relative
+    border-bottom: 0
+
+    &::before
+      content: ''
+      width: 100%
+      height: 100%
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 0
+      background: url('assets/images/backgrounds/golden-ratio-contact.png') no-repeat center 0
+      background-size: 730px
+
+    header.section-header
+      @include pxtoem(padding-bottom, 20px, $base-font-size)
+      @include pxtoem(margin-bottom, 30px, $base-font-size)
+      position: relative
+      border-bottom: 1px solid $gray-tint45
+
+      @include breakpoint(browser-sm)
+        @include pxtoem(padding-bottom, 4px, $base-font-size)
+        @include pxtoem(margin-bottom, 21px, $base-font-size)
+
+      &::after
+        content: ""
+        position: absolute
+        right: 0
+        bottom: -2px
+        left: 0
+        height: 1px
+        background-color: $white
+
+      h2
+        margin-bottom: 35px
+        color: $gray-tint45
+        text-shadow: 1px 1px 1px $gray-tint3
+
+      h3
+        @include pxtoem(font-size, 24px, $base-font-size)
+        @include pxtoem(line-height, 33px, 23px)
+        text-shadow: 1px 1px 1px $white
+
+        @include breakpoint(browser-sm)
+          display: none
+
+    article
+
+      ul
+        width: 100%
+        list-style: none
+
+        li
+          width: 46.5753425%
+          @include fluid(max-width, 340px, $width)
+          margin-bottom: 50px
+          margin-left: 45px
+          display: inline-block
+          float: left
+
+          &:first-child
+            margin-left: 0
+
+          ul.social-profiles
+            text-align: left
+
+            li
+              width: 20%
+              max-width: 51px
+              margin: 0 16px 20px 0
+
+              &:nth-child(5), &:nth-child(10)
+                margin-right: 0
+
+              a
+                margin: 0
+                background-image: url('assets/images/icons/icons-social-blue.png')
+
+          @include breakpoint(browser-sm)
+            width: 100%
+            margin-left: 0
+            margin-bottom: 5px
+
+        h3
+          margin-bottom: 24px
+          color: $gray-tint63
+          @include pxtoem(font-size, 25px, $base-font-size)
+          @include pxtoem(line-height, 24px, 25px)
+          text-shadow: 1px 1px 1px $white
+
+      p
+        @include pxtoem(font-size, 18px, $base-font-size)
+        @include pxtoem(line-height, 25px, 18px)
+        text-shadow: 1px 1px 1px $white
+
+    footer
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 10
+
+
+body.single-projects
+  background-color: #434f61
+  position: relative
+
+  &::before
+    content: ''
+    width: 100%
+    height: 100%
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+    background: url('assets/images/backgrounds/golden-ratio-work.png') no-repeat center 0
+    background-size: 730px
+
+  article
+    margin: 0 auto
+
+    @include breakpoint(browser-lg)
+      max-width: $width
+
+    @include breakpoint(browser-sm)
+      max-width: $width
+
+
+  header.entry-header
+    position: relative
+    border-bottom: 1px solid $gray-tint90
+
+    &::after
+      content: ""
+      position: absolute
+      right: 0
+      bottom: -2px
+      left: 0
+      height: 1px
+      background-color: $gray-tint63
+
+    h1
+      color: $gray-tint3
+      text-shadow: 1px 1px 1px $black
+
+  ul#tags
+    text-transform: lowercase
+    color: $primary-color
+    text-shadow: 1px 1px 1px $black
+    li
+      margin: 0 15px
+      display: inline-block
