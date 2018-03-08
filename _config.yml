@@ -3,7 +3,7 @@ title:              Jen Does Things
 email:              germanny@gmail.com
 description:        >- # this means to ignore newlines until "url:"
   Today, I'm learning about Jekyll
-url:                '' # the base hostname & protocol for your site, e.g. http://example.com
+url:                'https://www.jendoesthings.com' # the base hostname & protocol for your site, e.g. http://example.com
 layouts_dir:        _html/_layouts
 includes_dir:       _html/_includes
 
