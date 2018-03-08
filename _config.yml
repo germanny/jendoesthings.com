@@ -36,6 +36,17 @@ plugins:
   - jekyll-sitemap
   - jekyll-cloudinary
 
+cloudinary:
+  cloud_name:       germanny
+  verbose:          true
+  presets:
+    default:
+      min_width:            340
+      max_width:            730
+      fallback_max_width:   730
+      steps:                3
+      sizes:                "(min-width: 50rem) 50rem, 90vw"
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
