@@ -1,27 +1,24 @@
 # Site settings
 title:              Jen Does Things
+description:        Elegant Solutions, Rewarding Experiences
+baseurl:            ''
+url:                https://www.jendoesthings.com
+siteurl:            https://www.jendoesthings.com
 email:              germanny@gmail.com
-description:        >- # this means to ignore newlines until "url:"
-  Today, I'm learning about Jekyll
-baseurl:            '' # the base hostname & protocol for your site, e.g. http://example.com
-url:                'https://www.jendoesthings.com' # the base hostname & protocol for your site, e.g. http://example.com
-siteurl:            'https://www.jendoesthings.com'
-layouts_dir:        _html/_layouts
-includes_dir:       _html/_includes
-
-# Build settings
 markdown:           kramdown
-
-# Image settings
+collections_dir:    _collections
+includes_dir:       _html/_includes
+layouts_dir:        _html/_layouts
 image_base:         /assets/images/
 
-# Collections
-collections_dir:    _collections
 
 collections:
   pages:
-    output:          true;
+    output:          true
     permalink:       :path
+  shy-dogs:
+    output:          true
+
 
 # Defaults
 defaults:

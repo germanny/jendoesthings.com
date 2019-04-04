@@ -7,9 +7,9 @@ date:   2018-03-07 15:27:54 -0600
   <div class="container">
     <header class="page-header">
       <h1 class="page-title">Hi. I'm <span class="hidden">Jen.</span></h1>
-      <img src="{{ site.baseurl }}/assets/images/logos/brandmark.png" id="brandmark" alt="JenGermann Design">
+      <img src="/assets/images/logos/brandmark.png" id="brandmark" alt="JenGermann Design">
       <h2>I design and build beautiful, user-friendly websites.<br><span>Nice to meet you.</span></h2>
-      <a href="#work" id="lets-go" class="btn"><img src="{{ site.baseurl }}/assets/images/icons/arrows-lets-go.png" alt="Let's Go"></a>
+      <a href="#work" id="lets-go" class="btn"><img src="/assets/images/icons/arrows-lets-go.png" alt="Let's Go"></a>
     </header>
     <ul class="social-profiles">
       <li class="twitter"><a href="https://twitter.com/germanny" title="Twitter"><h3>Twitter</h3></a></li>
@@ -58,7 +58,12 @@ date:   2018-03-07 15:27:54 -0600
         </li>
 
         <li>
-          {% cloudinary {{ site.siteurl }}/assets/images/jen_jules_1024px.jpg alt="Jen + Jules" caption="Jen + Jules" figure="never" max_width="340" width="auto" class="alignnone size-full" %}
+          <figure figure="never" max_width="340" width="auto" class="alignnone size-full">
+            <img src="https://res.cloudinary.com/germanny/image/upload/c_limit,f_auto,fl_lossy,q_auto,w_730/v1/jendoesthings.com/jen_jules_1024px.jpg" srcset="https://res.cloudinary.com/germanny/image/upload/c_limit,f_auto,fl_lossy,q_auto,w_340/v1/jendoesthings.com/jen_jules_1024px.jpg 340w,
+          https://res.cloudinary.com/germanny/image/upload/c_limit,f_auto,fl_lossy,q_auto,w_535/v1/jendoesthings.com/jen_jules_1024px.jpg 535w,
+          https://res.cloudinary.com/germanny/image/upload/c_limit,f_auto,fl_lossy,q_auto,w_730/v1/jendoesthings.com/jen_jules_1024px.jpg 730w" sizes="(min-width: 50rem) 50rem, 90vw" alt="Jen + Jules" width="1024" height="1024">
+            <figcaption><p>Jen + Jules</p></figcaption>
+          </figure>
         </li>
       </ul>
     </article>
