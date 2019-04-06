@@ -313,12 +313,21 @@
       // - https://github.com/hakimel/reveal.js#configuration
       // - https://github.com/hakimel/reveal.js#dependencies
       Reveal.initialize({
+        multiplex: {
+          // Example values. To generate your own, see the socket.io server instructions.
+          secret: null, // null so the clients do not have control of the master presentation
+          id: '98c18073f1a276a5', // id, obtained from socket.io server
+          url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh' // Location of socket.io server
+        },
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
           { src: 'plugin/markdown/markdown.js' },
           { src: 'plugin/notes/notes.js', async: true },
-          { src: 'plugin/highlight/highlight.js', async: true }
-        ]
+          { src: 'plugin/highlight/highlight.js', async: true },
+          { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
+          { src: 'plugin/multiplex/client.js', async: true }
+        ],
+        hash: true
       });
     </script>
   </body>
