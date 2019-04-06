@@ -14,13 +14,13 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #1C1E20;
-  background: -moz-radial-gradient(center, circle cover, #555A5F 0%, #1C1E20 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #555A5F), color-stop(100%, #1C1E20));
-  background: -webkit-radial-gradient(center, circle cover, #555A5F 0%, #1C1E20 100%);
-  background: -o-radial-gradient(center, circle cover, #555A5F 0%, #1C1E20 100%);
-  background: -ms-radial-gradient(center, circle cover, #555A5F 0%, #1C1E20 100%);
   background: radial-gradient(center, circle cover, #555A5F 0%, #1C1E20 100%);
+  background: -ms-radial-gradient(center, circle cover, #555A5F 0%, #1C1E20 100%);
+  background: -o-radial-gradient(center, circle cover, #555A5F 0%, #1C1E20 100%);
+  background: -webkit-radial-gradient(center, circle cover, #555A5F 0%, #1C1E20 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #555A5F), color-stop(100%, #1C1E20));
+  background: -moz-radial-gradient(center, circle cover, #555A5F 0%, #1C1E20 100%);
+  background: #1C1E20;
   background-color: #2B2B2B;
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 .reveal h1 {
-  font-size: 250%;
+  font-size: 225%;
 }
 
 .reveal h2 {
@@ -211,10 +211,8 @@ body {
 .reveal table {
   border-collapse: collapse;
   border-spacing: 0;
-  margin: auto;
-  border: 0px solid;
-  border-width: 1px 0 0 1px;
   font-size: 50%;
+  margin: auto;
 }
 
 .reveal table th {
@@ -223,8 +221,6 @@ body {
 
 .reveal table th,
 .reveal table td {
-  border: 0 solid #EEE;
-  border-width: 0 1px 1px 0;
   padding: .2em .5em .2em .5em;
   text-align: left;
 }
@@ -342,7 +338,13 @@ body {
 /*********************************************
  * MISC
  *********************************************/
-.reveal .org-logo {
-  float: left;
-  margin: 0 20px 20px 0;
+.list-flex li {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.org-logo + small {
+  font-size: .75em;
+  width: calc(100% - 170px);
 }
