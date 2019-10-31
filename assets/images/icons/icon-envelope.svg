@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+  <title>Icon - Envelope</title>
+  <g id="glyphicons">
+  	<g id="envelope">
+  		<path d="M12.5,16.5l-12-12h24L12.5,16.5z M12.5,18.5l-5-5l-7,7h24l-7-7L12.5,18.5z M18.5,12.5l6,6v-12L18.5,12.5z M0.5,6.5v12l6-6
+  			L0.5,6.5z"/>
+  	</g>
+  </g>
+</svg>
